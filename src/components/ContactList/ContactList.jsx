@@ -6,13 +6,14 @@ import css from './ContactList.module.css';
 
 const ContactList = () => {
   const filteredContactsList = useSelector(contactsListFilter);
+
   return (
     <ul className={css.contactsList}>
-      {filteredContactsList.map(({ name, number, id }) => (
+      {filteredContactsList.map(({ name, phone, id }) => (
         <ContactListItem
           key={id}
           name={name}
-          number={number}
+          number={phone}
           id={id}
         ></ContactListItem>
       ))}
